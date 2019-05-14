@@ -7,4 +7,4 @@
 
 ## Permissions:
 
-`tntblocker.destroy` - Allows to break block with the tnt.
+`tntblocker.destroy` - Allows to break blocks with the tnt.
