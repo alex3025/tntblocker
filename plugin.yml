@@ -1,9 +1,9 @@
-name: TnTBlocker
+name: TntBlocker
 main: tntblocker.Main
 version: 1.0
 author: alex3025
-description: Pemette solo agli OP di rompere blocchi con la TnT
+description: A simply minecraft plugin that allows tnt explosion only for OPs.
 commands:
    tntblocker:
-      description: Mostra i crediti
+      description: Shows plugin info
       aliases: ['tb', 'tntblock', 'tntb']
