@@ -1,5 +1,5 @@
 # TntBlocker
-### A simply minecraft plugin that allows tnt explosion only for OPs.
+### A simple minecraft plugin that allows tnt explosion only for OPs.
 
 ## Commands:
 
