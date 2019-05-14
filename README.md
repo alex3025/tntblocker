@@ -8,4 +8,5 @@
 ## Permissions:
 
 `tntblocker.destroy` - Allows to break blocks with the tnt.
+
 `tntblocker.place` - Allows to place tnts.
