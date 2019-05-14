@@ -1,0 +1,11 @@
+# TntBlocker Config
+# Plugin by alex3025
+
+# Allow user without the permission to place tnts.
+allow-tnt-placing: true
+
+# Allow users without the permission to destroy blocks with tnts.
+allow-tnt-block-damage: false
+
+# Show in the console a message when a player tries to place a tnt.
+placing-warning: true

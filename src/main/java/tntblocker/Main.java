@@ -7,16 +7,18 @@ import tntblocker.EventListener;
 
 public class Main extends JavaPlugin {
     public static Main plugin;
+    static java.util.logging.Logger log = Bukkit.getLogger();
 
     public void onEnable() {
         plugin = this;
-        System.out.println("TnTBlocker by alex3025 - ENABLED!");
+        log.info("[TntBlocker] Plugin ENABLED!");
         Bukkit.getPluginManager().registerEvents(new EventListener(), this);
         this.getCommand("tntblocker").setExecutor(new Command());
+        saveDefaultConfig();
     }
 
     public void onDisable() {
-        System.out.println("TnTBlocker by alex3025 - DISABLED!");
+    	log.info("[TntBlocker] Plugin DISABLED!");
     }
 
     public static Main getInstance() {
