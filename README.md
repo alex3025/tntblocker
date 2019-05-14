@@ -3,8 +3,8 @@
 
 ## Commands:
 
-`/tntblocker` - Show info about the plugin
+`/tntblocker` - Show info about the plugin.
 
 ## Permissions:
 
-`tntblocker.destroy`
+`tntblocker.destroy` - Allows to break block with the tnt.
