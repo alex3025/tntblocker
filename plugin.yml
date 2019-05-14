@@ -1,0 +1,9 @@
+name: TnTBlocker
+main: tntblocker.Main
+version: 1.0
+author: alex3025
+description: Pemette solo agli OP di rompere blocchi con la TnT
+commands:
+   tntblocker:
+      description: Mostra i crediti
+      aliases: ['tb', 'tntblock', 'tntb']
