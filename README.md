@@ -1,12 +1,15 @@
 # TntBlocker
-### A simple minecraft plugin that allows tnt explosion only for OPs.
+### This simple plugin allows you to control if a player can place a tnt, grief the world using tnts, get notify if a player without a permission tries to place a tnt, and more!
 
 ## Commands:
 
 `/tntblocker` - Show info about the plugin.
+`/tntblocker reload` - Reloads the configiguration file.
 
 ## Permissions:
 
-`tntblocker.destroy` - Allows to break blocks with the tnt.
+`tntblocker.grief` - Allows tnt to break blocks.
 
-`tntblocker.place` - Allows to place tnts.
+`tntblocker.place` - Allows players to place tnts.
+
+`tntblocker.reload` - Allows to do the reload command.
