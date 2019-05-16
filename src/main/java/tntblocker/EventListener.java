@@ -7,6 +7,7 @@ import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class EventListener implements Listener {
@@ -19,8 +20,8 @@ public class EventListener implements Listener {
         	Entity source = ((TNTPrimed) entity).getSource();
 
         	if (source != null) {
-        		if (!source.isOp() || !source.hasPermission("tntblocker.destroy")) {
-        			if (!Boolean.parseBoolean(Main.getInstance().getConfig().getString("allow-tnt-block-damage"))) {
+        		if (!source.isOp() || !source.hasPermission("tntblocker.grief")) {
+        			if (!Boolean.parseBoolean(Main.getInstance().getConfig().getString("allow-tnt-grief"))) {
         				event.setCancelled(true);
 	            	} else {
 	                    event.setCancelled(false);
@@ -40,7 +41,7 @@ public class EventListener implements Listener {
     				if (event.getBlock().getType() == Material.TNT) {
     					event.setCancelled(true);
     					if (Boolean.parseBoolean(Main.getInstance().getConfig().getString("placing-warning"))) {
-    						Main.log.info("[TntBlocker] " + source.getName() + " tried to place a tnt at " + Math.round(source.getLocation().getX()) + " " + Math.round(source.getLocation().getY()) + " " + Math.round(source.getLocation().getZ()));
+    						Main.console.sendMessage("§8§l[§cTnT§fBlocker§8§l]§r§f " + source.getName() + "§c tried to place a tnt at §f" + Math.round(source.getLocation().getX()) + " §c/§f " + Math.round(source.getLocation().getY()) + " §c/§f " + Math.round(source.getLocation().getZ()));
     					}
 	                } else {
 	                    event.setCancelled(false);
@@ -50,5 +51,16 @@ public class EventListener implements Listener {
     		}
 		}
 	}
+	
+	@EventHandler
+    public void onPlayerDamage(EntityDamageByEntityEvent event) {
+        if (event.getEntity() instanceof Player && event.getDamager() instanceof TNTPrimed) {
+        	if (Boolean.parseBoolean(Main.getInstance().getConfig().getString("allow-tnt-damage"))) {
+        		event.setCancelled(false);
+        	} else {
+        		event.setCancelled(true);
+        	}
+        }
+    }
 }
 

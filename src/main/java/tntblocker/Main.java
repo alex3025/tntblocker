@@ -1,24 +1,25 @@
 package tntblocker;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import tntblocker.Command;
 import tntblocker.EventListener;
 
 public class Main extends JavaPlugin {
     public static Main plugin;
-    static java.util.logging.Logger log = Bukkit.getLogger();
+    static ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
 
     public void onEnable() {
         plugin = this;
-        log.info("[TntBlocker] Plugin ENABLED!");
+        console.sendMessage("§8§l[§cTnT§fBlocker§8§l]§r §aENABLED!");
         Bukkit.getPluginManager().registerEvents(new EventListener(), this);
         this.getCommand("tntblocker").setExecutor(new Command());
         saveDefaultConfig();
     }
 
     public void onDisable() {
-    	log.info("[TntBlocker] Plugin DISABLED!");
+    	console.sendMessage("§8§l[§cTnT§fBlocker§8§l]§r§c DISABLED!");
     }
 
     public static Main getInstance() {
