@@ -5,7 +5,7 @@
 
 `/tntblocker` - Show info about the plugin.
 
-`/tntblocker reload` - Reloads the configiguration file.
+`/tntblocker reload` - Reloads the configuration file.
 
 ## Permissions:
 
